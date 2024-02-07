@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bank xmlns="http://www.nerazvod.hz/data/clients">
+	<Client id='1'>
+		<Name>
+			<FirstName>Иван</FirstName>
+			<SecondName>Иванович</SecondName>
+			<LastName>Иванов</LastName>
+		</Name>
+		<phoneList>
+			<workPhone>33-47-65</workPhone>
+			<homePhone>22-46-15</homePhone>
+			<mobilePhone id="1">8-953-456-89-02</mobilePhone>
+			<mobilePhone id="2">8-925-780-61-49</mobilePhone>
+		</phoneList>
+		<passportInfo>
+			<serial>32 17</serial>
+			<number>966500</number>
+			<policeName>ГУ МВД ПО КЕМЕРОВСКОЙ ОБЛАСТИ</policeName>
+			<date>16.01.2018</date>
+		</passportInfo>
+		<credit id='1'>
+			<date>01.02.2024</date>
+			<type>Автомобильный</type>
+			<sum>1500000</sum>
+			<procent>11.2</procent>
+			<term>01.02.2026</term>
+		</credit>
+		<credit id='2'>
+			<date>20.06.2022</date>
+			<type>Ипотечный</type>
+			<sum>12000000</sum>
+			<procent>3.6</procent>
+			<term>20.06.2037</term>
+		</credit>
+	</Client>
+
+	<Client id='2'>
+		<Name>
+			<FirstName>Иван</FirstName>
+			<SecondName>Петрович</SecondName>
+			<LastName>Сидтиков</LastName>
+		</Name>
+		<phoneList>
+			<workPhone>55-23-09</workPhone>
+			<homePhone>22-11-25</homePhone>
+			<mobilePhone id="1">8-995-417-90-09</mobilePhone>
+			<mobilePhone id="2">8-955-078-16-94</mobilePhone>
+		</phoneList>
+		<passportInfo>
+			<serial>32 18</serial>
+			<number>123456</number>
+			<poleceName>ГУ МВД ПО КЕМЕРОВСКОЙ ОБЛАСТИ</poleceName>
+			<date>16.06.2018</date>
+		</passportInfo>
+		<debit id='1'>
+			<date>01.05.2020</date>
+			<type>Накопительный</type>
+			<sum>5000000</sum>
+			<procent>6.5</procent>
+			<term>01.05.2025</term>
+		</debit>
+		<credit id='3'>
+			<date>15.01.2024</date>
+			<type>Ипотечный</type>
+			<sum>20000000</sum>
+			<procent>4.8</procent>
+			<term>15.06.2039</term>
+		</credit>
+	</Client>
+</bank>

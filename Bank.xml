@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Содержит данные о клиентах банка, их кридитах и вкладах-->
+<Client>
+  <Name p2:FirsName="LastName" xmlns:p2="SecondName" />
+  <phoneList p2:workPhone="mobilePhone" xmlns:p2="homePhone" />
+  <passportInfo serial:number="date" xmlns:serial="policeName" />
+  <credit p2:date="sum" procent="term" xmlns:p2="type" />
+  <debit p2:date="sum" procent="term" xmlns:p2="type" />
+</Client>
