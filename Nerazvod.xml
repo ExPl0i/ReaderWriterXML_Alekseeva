@@ -20,7 +20,7 @@
 		</passportInfo>
 		<credit id='1'>
 			<date>01.02.2024</date>
-			<type>Автомобильный</type>
+			<type>Автокредит</type>
 			<sum>1500000</sum>
 			<procent>11.2</procent>
 			<term>01.02.2026</term>
@@ -53,8 +53,9 @@
 			<date>16.06.2018</date>
 		</passportInfo>
 		<debit id='1'>
+			<number>40155269700000007419</number>
 			<date>01.05.2020</date>
-			<type>Накопительный</type>
+			<type>Депозитный</type>
 			<sum>5000000</sum>
 			<procent>6.5</procent>
 			<term>01.05.2025</term>
