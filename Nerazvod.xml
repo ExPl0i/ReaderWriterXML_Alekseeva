@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<bank xmlns="http://www.nerazvod.hz/data/clients">
+<bank xmlns="http://www.nerazvod.hz/bank">
 	<Client id='1'>
 		<Name>
 			<FirstName>Иван</FirstName>
