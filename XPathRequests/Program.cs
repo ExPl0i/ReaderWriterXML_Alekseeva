@@ -1,7 +1,7 @@
 ﻿using System.Xml;
 using System.Xml.XPath;
 
-namespace XpathExpr
+namespace XpathRequests3
 {
     internal class Program
     {
@@ -19,7 +19,7 @@ namespace XpathExpr
             // Добавляем пространство имен по умолчанию с фиктивным префиксом "t"
             nsMgr.AddNamespace("t", "http://www.nerazvod.hz/bank");
             nsMgr.AddNamespace("db", "http://www.nerazvod.hz/bank/debit");
-            
+
 
             // Признак того, является ли результат XPath-выражения числом
             bool isNumber = double.TryParse(xpnav.Evaluate(exprs, nsMgr).ToString(),
@@ -68,7 +68,7 @@ namespace XpathExpr
         static void Query3(XPathNavigator xpNav, string fname, string sname, string lname)
         {
             string title = string.Format("3. Все вклады, сделанные клиентом {0} {1} {2} :", fname, sname, lname);
-            string exprs = string.Format("count(t:bank/t:Client[t:Name/@FirstName = {0} and t:Name/@SeconName = {1} and t:Name/@LastName = {2}]/t:debit)", fname, sname, lname);
+            string exprs = string.Format("count(t:bank/t:Client[t:Name/FirstName = {0} and t:Name/SeconName = {1} and t:Name/LastName = {2}]/t:debit)", fname, sname, lname);
             XPathProcess(xpNav, exprs, title);
         }
 
