@@ -152,10 +152,10 @@ namespace XpathRequests3
         /// </summary>
         /// <param name="xpNav">Объект XPathNavigator</param>
         /// <param name="code">Код кредита</param>
-        static void Query10(XPathNavigator xpNav, int code)
+        static void Query10(XPathNavigator xpNav, string code)
         {
             string title = string.Format("10. Число кредитов, предшествующих в документе кредиту с кодом {0}:", code);
-            string exprs = string.Format("count(t:bank/t:Client/t:credit[@id < {0}])", code);
+            string exprs = string.Format("count(//t:credit[@id = {0}]/preceding::t:credit)", code);
             XPathProcess(xpNav, exprs, title);
         }
         static void Main(string[] args)
@@ -186,7 +186,7 @@ namespace XpathRequests3
             Console.WriteLine();
             Query9(xpNav, "1");
             Console.WriteLine();
-            Query10(xpNav, 3);
+            Query10(xpNav, "3");
             Console.WriteLine();
 
             Console.Read();

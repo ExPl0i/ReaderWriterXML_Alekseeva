@@ -68,4 +68,76 @@
 			<term>15.06.2039</term>
 		</credit>
 	</Client>
+	
+	<Client ID="3">
+    <Name>
+      <FirstName>Михаил</FirstName>
+      <SecondName>Игоревич</SecondName>
+      <LastName>Белкин</LastName>
+    </Name>
+    <phoneList>
+      <workPhone>22-15-00</workPhone>
+      <homePhone>none</homePhone>
+      <mobilePhone>8-800-555-35-35</mobilePhone>
+    </phoneList>
+    <passportInfo>
+      <serial>77 23</serial>
+      <number>069690</number>
+      <policeName>УПРАВЛЕНИЕ ФЕДЕРАЛЬНОЙ МИГРАЦИОННОЙ СЛУЖБЫ РОССИИ ПО ГОР. МОСКВЕ</policeName>
+      <policeID>770-001</policeID>
+      <date>24.12.2023</date>
+    </passportInfo>
+    <debit ID="2">
+      <number>50803979800000009254</number>
+      <date>26.12.2023</date>
+      <type>Валютный</type>
+      <sum>50000</sum>
+      <procent>4.2</procent>
+      <term>26.12.2025</term>
+    </debit>
+    <debit ID="3">
+      <number>50559147400000009412</number>
+      <date>27.12.2023</date>
+      <type>Валютный</type>
+      <sum>150000</sum>
+      <procent>5.2</procent>
+      <term>27.12.2025</term>
+    </debit>
+  </Client>
+	
+  <Client ID="4">
+    <Name>
+      <FirstName>Полина</FirstName>
+      <SecondName>Юрьевна</SecondName>
+      <LastName>Фомина</LastName>
+    </Name>
+    <phoneList>
+      <workPhone>33-15-51</workPhone>
+      <homePhone>none</homePhone>
+      <mobilePhone>8-982-105-62-85</mobilePhone>
+    </phoneList>
+    <passportInfo>
+      <serial>77 23</serial>
+      <number>190091</number>
+      <policeName>УПРАВЛЕНИЕ ФЕДЕРАЛЬНОЙ МИГРАЦИОННОЙ СЛУЖБЫ РОССИИ ПО ГОР. МОСКВЕ</policeName>
+      <policeID>770-001</policeID>
+      <date>05.01.2024</date>
+    </passportInfo>
+    <debit ID="4">
+      <number>50465851600000001984</number>
+      <date>06.01.2024</date>
+      <type>Валютный</type>
+      <sum>5000</sum>
+      <procent>4.2</procent>
+      <term>06.01.2025</term>
+    </debit>
+    <debit ID="5">
+      <number>40294110600000001373</number>
+      <date>07.01.2024</date>
+      <type>Валютный</type>
+      <sum>150000</sum>
+      <procent>5.2</procent>
+      <term>07.01.2026</term>
+    </debit>
+  </Client>
 </bank>
