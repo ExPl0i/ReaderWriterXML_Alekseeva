@@ -5,57 +5,73 @@
     xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
 >
-	<xs:elment name =" bank">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name = "Name">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name ="FirstName" type="xs:string"/>
-							<xs:element name ="SecondName" type="xs:string"/>
-							<xs:element name ="LastName" type="xs:string"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
+	<xs:elment name =" bank" type ="bank"/>
+	<xs:complexType name ="bank">
+		<xs:sequence>
+			<xs:element name ="Client" type ="Client" minOccurs ="1" maxOccurs ="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name ="Client">
+		<xs:sequence>
+			<xs:element name = "Name" type ="Name"/>
+			<xs:element name ="phoneList" type ="phoneList"/>
+			<xs:element name ="passportInfo" type ="passportInfo"/>
+			<xs:element name="credit" type ="credit"/>
+			<xs:element name="debit" type ="debit"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required"/> 
+	</xs:complexType>
 
-				<xs:element name ="phoneList">
-					<xs:sequence>
-						<xs:element name ="workPhone" type="xs:string"/>
-						<xs:element name ="homePhone" type="xs:string"/>
-						<xs:element name ="mobilePhone" type="xs:string"/>
-					</xs:sequence>
-				</xs:element>
+	<xs:complexType name ="Name">
+		<xs:sequence>
+			<xs:element name ="FirstName" type="xs:string"/>
+			<xs:element name ="SecondName" type="xs:string"/>
+			<xs:element name ="LastName" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
 
-				<xs:element name ="passportInfo">
-					<xs:sequence>
-						<xs:element name ="serial" type="xs:string"/>
-						<xs:element name ="number" type="xs:string"/>
-						<xs:element name ="policeName" type="xs:string"/>
-						<xs:element name ="date" type="xs:string"/>
-					</xs:sequence>
-				</xs:element>
+	<xs:complexType name ="phoneList">
+		<xs:sequence>
+			<xs:element name ="workPhone" type="xs:string"/>
+			<xs:element name ="homePhone" type="xs:string"/>
+			<xs:element name ="mobilePhone" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
 
-				<xs:element name="credit">
-					<xs:sequence>
-						<xs:element name ="date" type="xs:string"/>
-						<xs:element name ="type" type="xs:string"/>
-						<xs:element name ="sum" type="xs:uinteger"/>
-						<xs:element name ="procent" type="xs:double"/>
-						<xs:element name ="term" type="xs:string"/>
-					</xs:sequence>
-				</xs:element>
+	<xs:complexType name ="passportInfo">
+		<xs:sequence>
+			<xs:element name ="serial" type="xs:string"/>
+			<xs:element name ="number" type="xs:string"/>
+			<xs:element name ="policeName" type="xs:string"/>
+			<xs:element name ="policeID" type="xs:string"/>
+			<xs:element name ="date" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
 
-				<xs:element name="debit">
-					<xs:sequense>
-						<xs:element name ="number" type="xs:string"/>
-						<xs:element name ="date" type="xs:string"/>
-						<xs:element name ="type" type="xs:string"/>
-						<xs:element name ="sum" type="xs:unsignedInt"/>
-						<xs:element name ="procent" type="xs:decimal"/>
-						<xs:element name ="term" type="xs:string"/>
-					</xs:sequense>
-				</xs:element>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:elment>
+	<xs:complexType name ="credt">
+		<xs:sequence>
+			<xs:element name ="date" type="xs:string"/>
+			<xs:element name ="type" type="xs:string"/>
+			<xs:element name ="sum" type="xs:uinteger"/>
+			<xs:element name ="procent" type="xs:double"/>
+			<xs:element name ="term" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name ="debit">
+		<xs:sequense>
+			<xs:element name ="number" type="xs:string"/>
+			<xs:element name ="date" type="xs:string"/>
+			<xs:element name ="type" type="xs:string"/>
+			<xs:element name ="sum" type="xs:unsignedInt"/>
+			<xs:element name ="procent" type="xs:decimal"/>
+			<xs:element name ="term" type="xs:string"/>
+		</xs:sequense>
+		<xs:attribute name="id" type="xs:string" use="required"/>
+	</xs:complexType>
+	
 </xs:schema>
+
+
