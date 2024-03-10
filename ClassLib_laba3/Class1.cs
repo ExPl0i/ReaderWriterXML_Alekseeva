@@ -1,14 +1,7 @@
-﻿using System.Xml;
-using System.Xml.Serialization;
-using System.IO;
-using System.Text;
-using System.Runtime.Serialization.Formatters.Binary;
+﻿using System.Xml.Serialization;
+using System.Xml;
 
-
-
-
-
-namespace Laba_3
+namespace ClassLib_laba3
 {
     // Предсставляет банковский вклад
     [Serializable]
@@ -81,7 +74,7 @@ namespace Laba_3
         /// </summary>
         /// <param name="uri">URI XML-файла</param>
         /// <param name="debit">Объект класса Debit</param>
-        public static void SaveDebitObject(string uri,  Debit debit)
+        public static void SaveDebitObject(string uri, Debit debit)
         {
             // Объект с настройками для XmlWriter
             XmlWriterSettings xmlWrS = new XmlWriterSettings();
@@ -125,7 +118,7 @@ namespace Laba_3
     }
 
 
-    public static class XmlDataProvider<T> 
+    public static class XmlDataProvider<T>
         where T : class, new()
     {
         // Объект для XML-сериализации и десериализации
@@ -160,58 +153,16 @@ namespace Laba_3
         }
     }
 
-    
+
     public static class DebitBinDataProvider
     {
         // Объект для сериализации/десериализации в двоичном формате
         //static BinaryFormatter binFormat = new BinaryFormatter();
     }
 
-    
+
     public static class DebitSoapDataProvideer
     {
         //static SoapFormatter 
-    }
-
-    internal class Program
-    {
-        /// <summary>
-        /// Выполняет сохранение объекта Debit в XML-файле и загрузку объекта из файла
-        /// </summary>
-        /// <param name="fileName"></param>
-        /// <param name="debit"></param>
-        static void TestXmlSerialization(string fileName, Debit debit)
-        {
-            Console.WriteLine("*** XML-сериализация и десериализация ***\n");
-
-            // Созраняем состояние объекта debit в XML-файле
-            DebitXmlDataProvider.SaveDebitObject(fileName, debit);
-
-            Console.WriteLine("Код полученного XML-файла:\n" + DebitXmlDataProvider.GetXmlCode(fileName) + "\n");
-            // Загружаем объект newDebit из XML-файла
-            Debit newDebit = DebitXmlDataProvider.LoadDebitObject(fileName);
-
-            Console.WriteLine("После загрузки из XML-файла:\n" + newDebit.ToString() + "\n");
-        }
-        static void Main(string[] args)
-        {
-            Console.Title = "Сериализация и десериализация объектов";
-
-            Debit debit = new Debit()
-            {
-                Number = "50149001000000002073",
-                NameOwner = "Деникин Денис Никифорович",
-                Date = "25.12.2023",
-                Sum = 100000,
-                Procent = 4.6
-            };
-
-            Console.WriteLine("До созранения в файл:\n" + debit.ToString());
-
-            string xmlFileName = @"C:\Users\mripo\Source\Repos\ExPl0i\ReaderWriterXML_Alekseeva\DebitData.xml";
-            TestXmlSerialization(xmlFileName, debit);
-
-            Console.ReadLine();
-        }
     }
 }
