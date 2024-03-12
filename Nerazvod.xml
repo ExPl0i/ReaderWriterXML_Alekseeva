@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<bank xmlns="http://www.nerazvod.hz/bank">
+<bank xmlns="http://www.nerazvod.hz/bank"
+	  xmlns:xsi ="http://www.w3.org/2001/XMLSchema">
 	<Client id='1'>
 		<Name>
 			<FirstName>Иван</FirstName>
