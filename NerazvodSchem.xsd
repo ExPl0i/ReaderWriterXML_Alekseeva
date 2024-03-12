@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema targetNamespace="http://www.nerazvod.hz/data/clients"
-    elementFormDefault="qualified"
-    xmlns="http://tempuri.org/XMLSchema.xsd"
-    xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
->
-	<xs:elment name =" bank" type ="bank"/>
+<xsi:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema" 
+			attributeFormDefault="unqualified" 
+			elementFormDefault="qualified" 
+			targetNamespace="http://www.nerazvod.hz/bank"
+			xmlns ="http://www.nerazvod.hz/bank">
+
+	<xs:element name="bank" type ="bank"/>
 	<xs:complexType name ="bank">
 		<xs:sequence>
 			<xs:element name ="Client" type ="Client" minOccurs ="1" maxOccurs ="unbounded"/>
@@ -14,7 +15,7 @@
 	
 	<xs:complexType name ="Client">
 		<xs:sequence>
-			<xs:element name = "Name" type ="Name"/>
+			<xs:element name ="Name" type ="Name"/>
 			<xs:element name ="phoneList" type ="phoneList"/>
 			<xs:element name ="passportInfo" type ="passportInfo"/>
 			<xs:element name="credit" type ="credit"/>
@@ -49,11 +50,11 @@
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name ="credt">
+	<xs:complexType name ="credit">
 		<xs:sequence>
 			<xs:element name ="date" type="xs:string"/>
 			<xs:element name ="type" type="xs:string"/>
-			<xs:element name ="sum" type="xs:uinteger"/>
+			<xs:element name ="sum" type="xs:int"/>
 			<xs:element name ="procent" type="xs:double"/>
 			<xs:element name ="term" type="xs:string"/>
 		</xs:sequence>
@@ -61,17 +62,17 @@
 	</xs:complexType>
 
 	<xs:complexType name ="debit">
-		<xs:sequense>
+		<xs:sequence>
 			<xs:element name ="number" type="xs:string"/>
 			<xs:element name ="date" type="xs:string"/>
 			<xs:element name ="type" type="xs:string"/>
 			<xs:element name ="sum" type="xs:unsignedInt"/>
 			<xs:element name ="procent" type="xs:decimal"/>
 			<xs:element name ="term" type="xs:string"/>
-		</xs:sequense>
+		</xs:sequence>
 		<xs:attribute name="id" type="xs:string" use="required"/>
 	</xs:complexType>
 	
-</xs:schema>
+</xsi:schema>
 
 

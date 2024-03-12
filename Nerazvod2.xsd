@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsi:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nerazvod.hz/bank">
+	<xs:element name="bank">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="Client">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Name">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FirstName" type="xs:string" />
+										<xs:element name="SecondName" type="xs:string" />
+										<xs:element name="LastName" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="phoneList">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="workPhone" type="xs:string" />
+										<xs:element name="homePhone" type="xs:string" />
+										<xs:element maxOccurs="unbounded" name="mobilePhone">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="id" type="xs:unsignedByte" use="optional" />
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="passportInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="serial" type="xs:string" />
+										<xs:element name="number" type="xs:unsignedInt" />
+										<xs:element minOccurs="0" name="poleceName" type="xs:string" />
+										<xs:element minOccurs="0" name="policeName" type="xs:string" />
+										<xs:element minOccurs="0" name="policeID" type="xs:string" />
+										<xs:element name="date" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="debit">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="number" type="xs:integer" />
+										<xs:element name="date" type="xs:string" />
+										<xs:element name="type" type="xs:string" />
+										<xs:element name="sum" type="xs:unsignedInt" />
+										<xs:element name="procent" type="xs:decimal" />
+										<xs:element name="term" type="xs:string" />
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:unsignedByte" use="optional" />
+									<xs:attribute name="ID" type="xs:unsignedByte" use="optional" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element minOccurs="0" maxOccurs="unbounded" name="credit">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="date" type="xs:string" />
+										<xs:element name="type" type="xs:string" />
+										<xs:element name="sum" type="xs:unsignedInt" />
+										<xs:element name="procent" type="xs:decimal" />
+										<xs:element name="term" type="xs:string" />
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:unsignedByte" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:unsignedByte" use="optional" />
+						<xs:attribute name="ID" type="xs:unsignedByte" use="optional" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xsi:schema>
