@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReaderWriter", "ReaderWrite
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPathRequests", "XPathRequests\XPathRequests.csproj", "{0A767F73-44C3-40FE-85A1-24A40C634E69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSDcheck", "XSDcheck\XSDcheck.csproj", "{04F0625E-F1FB-4193-A072-341B39EAC75F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XSDcheck", "XSDcheck\XSDcheck.csproj", "{04F0625E-F1FB-4193-A072-341B39EAC75F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laba_3", "Laba_3\Laba_3.csproj", "{651F078A-223E-4D48-AF5C-A307EC2F0C2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laba_3", "Laba_3\Laba_3.csproj", "{651F078A-223E-4D48-AF5C-A307EC2F0C2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLib_laba3", "ClassLib_laba3\ClassLib_laba3.csproj", "{D6D307C6-153D-4AB6-AC3F-2ECD2C0AE35E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLib_laba3", "ClassLib_laba3\ClassLib_laba3.csproj", "{D6D307C6-153D-4AB6-AC3F-2ECD2C0AE35E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForm_laba3", "WinForm_laba3\WinForm_laba3.csproj", "{7708CBD5-BDE7-49AD-B8DF-587D323F8BCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForm_laba3", "WinForm_laba3\WinForm_laba3.csproj", "{7708CBD5-BDE7-49AD-B8DF-587D323F8BCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laba_4", "Laba_4\Laba_4.csproj", "{B495FB5B-507A-4A78-8577-130B8E28C03F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{7708CBD5-BDE7-49AD-B8DF-587D323F8BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7708CBD5-BDE7-49AD-B8DF-587D323F8BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7708CBD5-BDE7-49AD-B8DF-587D323F8BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B495FB5B-507A-4A78-8577-130B8E28C03F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B495FB5B-507A-4A78-8577-130B8E28C03F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B495FB5B-507A-4A78-8577-130B8E28C03F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B495FB5B-507A-4A78-8577-130B8E28C03F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
