@@ -46,14 +46,14 @@ namespace Laba_4
             dataGridAttribs.Rows[3].HeaderCell.Value = "Разряд";
             dataGridAttribs.Rows[4].HeaderCell.Value = "Общая зарплата, р";
 
-            Worker worker = listBoxMachines.SelectedItem as Worker;
+            Worker worker = listBoxWorkers.SelectedItem as Worker;
             if (worker != null)
             {
-                dataGridAttribs.Rows[0].HeaderCell.Value = worker.ID;
-                dataGridAttribs.Rows[1].HeaderCell.Value = worker.Name;
-                dataGridAttribs.Rows[2].HeaderCell.Value = worker.Speciality;
-                dataGridAttribs.Rows[3].HeaderCell.Value = worker.Grade;
-                dataGridAttribs.Rows[4].HeaderCell.Value = worker.Salary;
+                dataGridAttribs.Rows[0].Cells[0].Value = worker.ID;
+                dataGridAttribs.Rows[1].Cells[0].Value = worker.Name;
+                dataGridAttribs.Rows[2].Cells[0].Value = worker.Speciality;
+                dataGridAttribs.Rows[3].Cells[0].Value = worker.Grade;
+                dataGridAttribs.Rows[4].Cells[0].Value = worker.Salary;
             }
         }
 
@@ -62,15 +62,16 @@ namespace Laba_4
         /// </summary>
         private void AddNewWorker()
         {
-            string id = dataGridAttribs.Rows[0].HeaderCell.Value.ToString();
-            string name = dataGridAttribs.Rows[1].HeaderCell.Value.ToString();
-            string speciality = dataGridAttribs.Rows[2].HeaderCell.Value.ToString();
+            string id = dataGridAttribs.Rows[0].Cells[0].Value.ToString();
+            string name = dataGridAttribs.Rows[1].Cells[0].Value.ToString();
+            string speciality = dataGridAttribs.Rows[2].Cells[0].Value.ToString();
             int grade = 0;
-            int.TryParse(dataGridAttribs.Rows[3].HeaderCell.Value.ToString(), out grade);
+            int.TryParse(dataGridAttribs.Rows[3].Cells[0].Value.ToString(), out grade);
             int salary = 0;
-            int.TryParse(dataGridAttribs.Rows[4].HeaderCell.Value.ToString(), out salary);
+            int.TryParse(dataGridAttribs.Rows[4].Cells[0].Value.ToString(), out salary);
 
             workshop.AddNewWorker(id, name, speciality, grade, salary);
+            RefreshListBoxWorkers();   
         }
 
         /// <summary>
@@ -117,9 +118,9 @@ namespace Laba_4
             Machine machine = listBoxMachines.SelectedItem as Machine;
             if (machine != null)
             {
-                dataGridAttribs.Rows[0].HeaderCell.Value = machine.ID;
-                dataGridAttribs.Rows[1].HeaderCell.Value = machine.Name;
-                dataGridAttribs.Rows[2].HeaderCell.Value = machine.Model;
+                dataGridAttribs.Rows[0].Cells[0].Value = machine.ID;
+                dataGridAttribs.Rows[1].Cells[0].Value = machine.Name;
+                dataGridAttribs.Rows[2].Cells[0].Value = machine.Model;
             }
         }
 
@@ -128,11 +129,11 @@ namespace Laba_4
         /// </summary>
         private void AddNewMachine()
         {
-            string id = dataGridAttribs.Rows[0].HeaderCell.Value.ToString();
-            string name = dataGridAttribs.Rows[1].HeaderCell.Value.ToString();
-            string model = dataGridAttribs.Rows[2].HeaderCell.Value.ToString();
+            string id = dataGridAttribs.Rows[0].Cells[0].Value.ToString();
+            string name = dataGridAttribs.Rows[1].Cells[0].Value.ToString();
+            string model = dataGridAttribs.Rows[2].Cells[0].Value.ToString();
             
-            Worker worker = listBoxMachines.SelectedItem as Worker;
+            Worker worker = listBoxWorkers.SelectedItem as Worker;
             if (worker != null)
             {
                 worker.AddNewMachine(id, name, model);
@@ -145,7 +146,7 @@ namespace Laba_4
         /// </summary>
         private void RemoveMachine()
         {
-            Worker worker = listBoxMachines.SelectedItem as Worker;
+            Worker worker = listBoxWorkers.SelectedItem as Worker;
             if (worker != null)
             {
                 int index = listBoxMachines.SelectedIndex;
@@ -382,6 +383,7 @@ namespace Laba_4
             Speciality = spec;
             Grade = grade;
             Salary = salary;
+            Machines = new List<Machine>();
         }
 
         /// <summary>
@@ -477,11 +479,11 @@ namespace Laba_4
         /// <param name="name">Название</param>
         /// <param name="workers">Список рабочих</param>
         /// <param name="machines">Список станков</param>
-        public Workshop(string id, string name, List<Worker> workers, List<Machine> machines)
+        public Workshop(string id, string name)
         {
             ID = id;
             Name = name;
-            Workers = workers;
+            Workers = new List<Worker>();
         }
 
         /// <summary>

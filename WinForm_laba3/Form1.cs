@@ -24,7 +24,7 @@ namespace WinForm_laba3
                     Procent = 7
                 }
             };
-            xmlUri = @"C:\Users\mripo\Source\Repos\ExPl0i\ReaderWriterXML_Alekseeva\DebitData.xml";
+            xmlUri = @"DebitData1.xml";
         }
 
         /// <summary>
