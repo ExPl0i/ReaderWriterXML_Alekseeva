@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLib_laba3", "ClassLib_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForm_laba3", "WinForm_laba3\WinForm_laba3.csproj", "{7708CBD5-BDE7-49AD-B8DF-587D323F8BCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laba_4", "Laba_4\Laba_4.csproj", "{B495FB5B-507A-4A78-8577-130B8E28C03F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laba_4", "Laba_4\Laba_4.csproj", "{B495FB5B-507A-4A78-8577-130B8E28C03F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samost_2", "Samost_2\Samost_2.csproj", "{E54F8B33-9399-462E-9BFF-83BF2FF3F78A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{B495FB5B-507A-4A78-8577-130B8E28C03F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B495FB5B-507A-4A78-8577-130B8E28C03F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B495FB5B-507A-4A78-8577-130B8E28C03F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E54F8B33-9399-462E-9BFF-83BF2FF3F78A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E54F8B33-9399-462E-9BFF-83BF2FF3F78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E54F8B33-9399-462E-9BFF-83BF2FF3F78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E54F8B33-9399-462E-9BFF-83BF2FF3F78A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
