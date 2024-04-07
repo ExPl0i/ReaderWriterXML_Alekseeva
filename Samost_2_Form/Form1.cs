@@ -110,7 +110,7 @@ namespace Samost_2_Form
         public XmlDataProvider()
         {
             doc = new XmlDocument();
-            url = @"C:\Users\mripo\Source\Repos\ExPl0i\ReaderWriterXML_Alekseeva\XML\Debits.xml";
+            url = @"C:\Users\mripo\Source\Repos\ExPl0i\ReaderWriterXML_Alekseeva\XML\Debit.xml";
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace Samost_2_Form
         /// <returns>Код XML-документа</returns>
         public string GetXmlCode()
         {
-            doc.LoadXml(url);
+            doc.Load(url);
             return (doc.InnerXml);
         }
 
