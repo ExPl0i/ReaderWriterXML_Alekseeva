@@ -22,32 +22,32 @@ namespace Samost_2
             xmlDoc.AppendChild(xmlDoc.CreateXmlDeclaration("1.0", "utf-8", "yes"));
             // Добавление комментария в XML-документ
             xmlDoc.AppendChild(xmlDoc.CreateComment("Данные о банковских вкладах"));
-            XmlElement rootElem = xmlDoc.CreateElement("debit");
+            XmlElement rootElem = xmlDoc.CreateElement("debits");
             // Добавление корневого элемента в XML-документа
             xmlDoc.AppendChild(rootElem);
             // Задание пространства имен по умолчанию в корневом элементе
             rootElem.SetAttribute("xmlns", "http://www.debit.com/uslugi");
 
-            XmlElement clientElem = xmlDoc.CreateElement("Client");
-            rootElem.AppendChild(clientElem);
-            clientElem.SetAttribute("ID", "1"); // Задание атрибута и его значения
+            XmlElement debitElem = xmlDoc.CreateElement("debit");
+            rootElem.AppendChild(debitElem);
+            debitElem.SetAttribute("ID", "1"); // Задание атрибута и его значения
 
             XmlElement numberElem = xmlDoc.CreateElement("number");
             // Задание текстового содержимого элемента-контейнера
             numberElem.InnerText = "40300767400000002167";
-            clientElem.AppendChild(numberElem);
+            debitElem.AppendChild(numberElem);
             XmlElement clietntNameElem = xmlDoc.CreateElement("clientName");
             clietntNameElem.InnerText = "Белкин Михаил Игоревич";
-            clientElem.AppendChild(clietntNameElem);
+            debitElem.AppendChild(clietntNameElem);
             XmlElement dateElem = xmlDoc.CreateElement("date");
             dateElem.InnerText = "01.04.2024";
-            clientElem.AppendChild(dateElem);
+            debitElem.AppendChild(dateElem);
             XmlElement sumElem = xmlDoc.CreateElement("sum");
             sumElem.InnerText = "1000000";
-            clientElem.AppendChild(sumElem);
+            debitElem.AppendChild(sumElem);
             XmlElement procentElem = xmlDoc.CreateElement("procent");
             procentElem.InnerText = "7.5";
-            clientElem.AppendChild(procentElem);
+            debitElem.AppendChild(procentElem);
 
             // Сохранение документа в XML-файле
             xmlDoc.Save(url);
