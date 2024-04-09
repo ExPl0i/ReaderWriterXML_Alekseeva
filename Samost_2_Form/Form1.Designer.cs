@@ -45,6 +45,8 @@
             textBoxDate = new TextBox();
             textBoxSum = new TextBox();
             textBoxProcent = new TextBox();
+            label9 = new Label();
+            textBoxID = new TextBox();
             SuspendLayout();
             // 
             // listView1
@@ -108,7 +110,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label3.Location = new Point(12, 276);
+            label3.Location = new Point(12, 260);
             label3.Name = "label3";
             label3.Size = new Size(57, 17);
             label3.TabIndex = 6;
@@ -199,11 +201,30 @@
             textBoxProcent.Size = new Size(170, 23);
             textBoxProcent.TabIndex = 16;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            label9.Location = new Point(12, 292);
+            label9.Name = "label9";
+            label9.Size = new Size(22, 17);
+            label9.TabIndex = 17;
+            label9.Text = "id:";
+            // 
+            // textBoxID
+            // 
+            textBoxID.Location = new Point(123, 291);
+            textBoxID.Name = "textBoxID";
+            textBoxID.Size = new Size(170, 23);
+            textBoxID.TabIndex = 18;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(644, 534);
+            Controls.Add(textBoxID);
+            Controls.Add(label9);
             Controls.Add(textBoxProcent);
             Controls.Add(textBoxSum);
             Controls.Add(textBoxDate);
@@ -247,5 +268,7 @@
         private TextBox textBoxDate;
         private TextBox textBoxSum;
         private TextBox textBoxProcent;
+        private Label label9;
+        private TextBox textBoxID;
     }
 }

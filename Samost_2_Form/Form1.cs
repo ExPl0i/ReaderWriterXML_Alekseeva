@@ -55,6 +55,7 @@ namespace Samost_2_Form
             // Выбор первого элемента коллекции sLviC и запись его данных в текстовые поля
             foreach (MyListViewItem myLvi in  sLviC)
             {
+                textBoxID.Text = myLvi.XmlNode.Attributes["id"].Value;
                 textBoxNumber.Text = myLvi.XmlNode.SelectSingleNode("number").InnerText;
                 textBoxName.Text = myLvi.XmlNode.SelectSingleNode("name").InnerText;
                 textBoxDate.Text = myLvi.XmlNode.SelectSingleNode("date").InnerText;
@@ -70,6 +71,7 @@ namespace Samost_2_Form
             XmlNode xn = xdp.GetXmlNode();
 
             // Считывание данных из текстовых полейи их запись в XML-узел xn
+            xn.Attributes["id"].Value = textBoxID.Text;
             xn.SelectSingleNode("number").InnerText = textBoxNumber.Text;
             xn.SelectSingleNode("name").InnerText = textBoxName.Text;
             xn.SelectSingleNode("date").InnerText = textBoxDate.Text;
@@ -167,11 +169,11 @@ namespace Samost_2_Form
         /// <param name="xn">Удаляемый XML-узел</param>
         public void RemoveXmlNode(XmlNode xn)
         {
-            string id = xn.SelectSingleNode("@id").InnerText;
-            XmlNodeList xnl = doc.SelectNodes("debits/dedit");
+            string id = xn.Attributes["id"].Value;
+            XmlNodeList xnl = doc.SelectNodes("debits/debit");
             foreach (XmlNode x in xnl)
             {
-                if (x.SelectSingleNode("@id").InnerText == id)
+                if (x.Attributes["id"].Value == id)
                 {
                     doc.DocumentElement.RemoveChild(x);
                     break;
