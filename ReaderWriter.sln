@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinForm_laba3", "WinForm_la
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laba_4", "Laba_4\Laba_4.csproj", "{B495FB5B-507A-4A78-8577-130B8E28C03F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samost_2", "Samost_2\Samost_2.csproj", "{E54F8B33-9399-462E-9BFF-83BF2FF3F78A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samost_2", "Samost_2\Samost_2.csproj", "{E54F8B33-9399-462E-9BFF-83BF2FF3F78A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samost_2_Form", "Samost_2_Form\Samost_2_Form.csproj", "{2C77E109-F90A-4881-BF7E-6448853F80C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samost_2_Form", "Samost_2_Form\Samost_2_Form.csproj", "{2C77E109-F90A-4881-BF7E-6448853F80C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laba_5", "Laba_5\Laba_5.csproj", "{A6745EBD-1F12-4196-B7B1-3AB334F1068E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{2C77E109-F90A-4881-BF7E-6448853F80C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C77E109-F90A-4881-BF7E-6448853F80C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C77E109-F90A-4881-BF7E-6448853F80C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6745EBD-1F12-4196-B7B1-3AB334F1068E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6745EBD-1F12-4196-B7B1-3AB334F1068E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6745EBD-1F12-4196-B7B1-3AB334F1068E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6745EBD-1F12-4196-B7B1-3AB334F1068E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
