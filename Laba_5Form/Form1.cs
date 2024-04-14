@@ -129,7 +129,7 @@ namespace Laba_5Form
         /// </summary>
         private void RemoveMachine()
         {
-            AppFacade.RemoveMachine(listBoxWorkers.SelectedIndex, listBoxMachines.SelectedIndex)
+            AppFacade.RemoveMachine(listBoxWorkers.SelectedIndex, listBoxMachines.SelectedIndex);
         }
 
         /// <summary>
