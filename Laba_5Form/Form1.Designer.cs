@@ -180,6 +180,7 @@
             listBoxWorkers.Size = new Size(293, 199);
             listBoxWorkers.TabIndex = 21;
             listBoxWorkers.SelectedIndexChanged += listBoxWorkers_SelectedIndexChanged;
+            listBoxWorkers.DoubleClick += listBoxWorkers_SelectedIndexChanged;
             // 
             // listBoxMachines
             // 
@@ -190,6 +191,7 @@
             listBoxMachines.Size = new Size(293, 199);
             listBoxMachines.TabIndex = 20;
             listBoxMachines.SelectedIndexChanged += listBoxMachines_SelectedIndexChanged;
+            listBoxMachines.DoubleClick += listBoxMachines_SelectedIndexChanged;
             // 
             // label3
             // 

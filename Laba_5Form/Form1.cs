@@ -1,8 +1,11 @@
+using System.Xml.Serialization;
+using System.Xml;
+
 namespace Laba_5Form
 {
     public partial class Form1 : Form
     {
-        string xmlFileUri = "";
+        string xmlFileUri = "C:\\Users\\mripo\\Source\\Repos\\ExPl0i\\ReaderWriterXML_Alekseeva\\XML\\Workshop.xml";
 
         public Form1()
         {
@@ -158,7 +161,8 @@ namespace Laba_5Form
         /// </summary>
         private void SaveData()
         {
-
+            AppFacade.SaveData(xmlFileUri);
+            MessageBox.Show("Данные сохранены!");
         }
 
         /// <summary>
@@ -166,7 +170,9 @@ namespace Laba_5Form
         /// </summary>
         private void LoadData()
         {
-
+            AppFacade.LoadData(xmlFileUri);
+            RefreshListBoxWorkers();
+            MessageBox.Show("Данные загружены!");
         }
 
         private void listBoxMachines_SelectedIndexChanged(object sender, EventArgs e)
@@ -176,8 +182,8 @@ namespace Laba_5Form
 
         private void listBoxWorkers_SelectedIndexChanged(object sender, EventArgs e)
         {
+            RefreshListBoxMachines();
             ShowWorkerAttributes();
-            RefreshListBoxWorkers();
         }
 
         private void buttonAddMachine_Click(object sender, EventArgs e)
@@ -241,7 +247,7 @@ namespace Laba_5Form
         /// <param name="xmlFileUri">Путь к XML-файлу</param>
         public static void LoadData(string xmlFileUri)
         {
-            
+            workshop = XmlDataProvider.LoadObject(xmlFileUri);
         }
 
         /// <summary>
@@ -250,7 +256,7 @@ namespace Laba_5Form
         /// <param name="xmlFileUri">Путь к XML-файлу</param>
         public static void SaveData(string xmlFileUri)
         {
-
+            XmlDataProvider.SaveObject(xmlFileUri, workshop);
         }
 
         /// <summary>
@@ -726,6 +732,99 @@ namespace Laba_5Form
         public void RemoveWorker(int index)
         {
             Workers.RemoveAt(index);
+        }
+    }
+
+    /// <summary>
+    /// Представляет объект для доступа к XML-данным
+    /// об экземплярах класса Workshop
+    /// </summary>
+    public static class XmlDataProvider
+    {
+        // Объект для XML-сериализации и десериализации
+        static XmlSerializer xmlSzr = new XmlSerializer(typeof(Workshop));
+
+        /// <summary>
+        /// Сохраняет объект класса Workshop в XML-файл
+        /// </summary>
+        /// <param name="uri">URI XML-файла</param>
+        /// <param name="workshop">Объект класса Workshop</param>
+        public static void SaveObject(string uri, Workshop workshop)
+        {
+            // Объект с настройками для XmlWriter
+            XmlWriterSettings xmlWrS = new XmlWriterSettings();
+            xmlWrS.Indent = true; // Задаем отступ для XML-элементов
+            // Объект для записи XML-файлов
+            XmlWriter xmlWrt = XmlWriter.Create(uri, xmlWrS);
+            // Сериализуем объект debit в XML
+            xmlSzr.Serialize(xmlWrt, workshop);
+            xmlWrt.Close(); // Закрываем поток данных для xmlWrt
+        }
+
+        /// <summary>
+        /// Загружает объект класса Workshop из XML-файла
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns>URI XML-файла</returns>
+        public static Workshop LoadObject(string uri)
+        {
+            // Объект с настройками для XmlReader
+            XmlReaderSettings xmlRdS = new XmlReaderSettings();
+            // Объект для чтения XML-файлов
+            XmlReader xmlRdr = XmlReader.Create(uri, xmlRdS);
+            // Десериализуем объект типа Debit
+            Workshop workshop = xmlSzr.Deserialize(xmlRdr) as Workshop;
+            // Закрываем поток данных для xmlRdr
+            xmlRdr.Close();
+            return workshop;
+        }
+
+        /// <summary>
+        /// Возвращает код XML-файла в виде строки
+        /// </summary>
+        /// <param name="xmlFileName">Имя XML-файла</param>
+        /// <returns>Строка с кодом XML-файла</returns>
+        public static string GetXmlCode(string xmlFileName)
+        {
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(xmlFileName);
+            return xmlDoc.InnerXml;
+        }
+    }
+
+
+    public static class XmlDataProvider<T>
+        where T : class, new()
+    {
+        // Объект для XML-сериализации и десериализации
+        static XmlSerializer xmlSzr = new XmlSerializer(typeof(T));
+
+        /// <summary>
+        /// Сохраняет объект в XML-файл
+        /// </summary>
+        /// <param name="uri">URI XML-файл</param>
+        /// <param name="obj">Объект</param>
+        public static void SaveObject(string uri, T obj)
+        {
+            XmlWriterSettings xmlWrS = new XmlWriterSettings();
+            xmlWrS.Indent = true;
+            XmlWriter xmlWrt = XmlWriter.Create(uri, xmlWrS);
+            xmlSzr.Serialize(xmlWrt, obj);
+            xmlWrt.Close();
+        }
+
+        /// <summary>
+        /// Загружает объект из XML-файла
+        /// </summary>
+        /// <param name="uri">URI XML-файла</param>
+        /// <returns>Объект</returns>
+        public static T LoadObject(string uri)
+        {
+            XmlReaderSettings xmlRdS = new XmlReaderSettings();
+            XmlReader xmlRdr = XmlReader.Create(uri, xmlRdS);
+            T obj = xmlSzr.Deserialize(xmlRdr) as T;
+            xmlRdr.Close();
+            return obj;
         }
     }
 }

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>AAA-00</ID>
+  <Name>Слесарный</Name>
+  <Workers>
+    <Worker>
+      <ID>1</ID>
+      <Name>Иванов Иван Иванович</Name>
+      <Speciality>Слесарь</Speciality>
+      <Grade>4</Grade>
+      <Salary>200000</Salary>
+      <CountMachine>0</CountMachine>
+      <Machines>
+        <Machine>
+          <ID>1</ID>
+          <Name>Станок слесарный</Name>
+          <Model>JT-200</Model>
+        </Machine>
+      </Machines>
+    </Worker>
+    <Worker>
+      <ID>2</ID>
+      <Name>Фомин Олег Иванович</Name>
+      <Speciality>Слесарь</Speciality>
+      <Grade>4</Grade>
+      <Salary>200000</Salary>
+      <CountMachine>0</CountMachine>
+      <Machines>
+        <Machine>
+          <ID>2</ID>
+          <Name>Станок токарный</Name>
+          <Model>JS-200</Model>
+        </Machine>
+        <Machine>
+          <ID>3</ID>
+          <Name>Станок токарный</Name>
+          <Model>16K-20</Model>
+        </Machine>
+      </Machines>
+    </Worker>
+  </Workers>
+</Workshop>

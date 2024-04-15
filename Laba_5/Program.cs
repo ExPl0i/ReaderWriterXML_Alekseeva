@@ -185,6 +185,9 @@
 
             Console.WriteLine(OA + "Текущая площадь обкладки кнденсатора: {0}", objAdapter.CurrentS);
 
+            Console.WriteLine(OA + objAdapter.GetData());
+            Console.WriteLine(OA + "Электрическая энергия конденсатора при напряжении {0}: {1}\n", u, objAdapter.CalculateW(u));
+
             Console.Read();
 
         }
