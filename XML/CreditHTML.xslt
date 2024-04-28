@@ -76,7 +76,7 @@
 									<xsl:value-of select="t:сумма"/>
 								</td>
 								<td>
-									<xsl:value-of select="t:сумма/@проц_ставка"/>
+									<xsl:value-of select="t:сумма/@проц_ст"/>
 								</td>
 								<td>
 									<xsl:value-of select="t:срок"/>
