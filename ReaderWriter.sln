@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samost_3", "Samost_3\Samost
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samost_3.NET", "Samost_3.NET\Samost_3.NET.csproj", "{6B9F932F-38B3-44AD-BA1C-45CBDC155E4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laba_6", "Laba_6\Laba_6.csproj", "{23961964-5B5E-4A53-92B1-9E358D61F627}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{6B9F932F-38B3-44AD-BA1C-45CBDC155E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B9F932F-38B3-44AD-BA1C-45CBDC155E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B9F932F-38B3-44AD-BA1C-45CBDC155E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23961964-5B5E-4A53-92B1-9E358D61F627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23961964-5B5E-4A53-92B1-9E358D61F627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23961964-5B5E-4A53-92B1-9E358D61F627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23961964-5B5E-4A53-92B1-9E358D61F627}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
