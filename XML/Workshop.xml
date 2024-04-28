@@ -4,37 +4,37 @@
   <Name>Слесарный</Name>
   <Workers>
     <Worker>
-      <ID>1</ID>
-      <Name>Иванов Иван Иванович</Name>
-      <Speciality>Слесарь</Speciality>
-      <Grade>4</Grade>
-      <Salary>200000</Salary>
+      <ID>001</ID>
+      <Name>Заупин Иван Олегович</Name>
+      <Speciality>Токарь</Speciality>
+      <Grade>3</Grade>
+      <Salary>20000</Salary>
       <CountMachine>0</CountMachine>
       <Machines>
         <Machine>
-          <ID>1</ID>
-          <Name>Станок слесарный</Name>
-          <Model>JT-200</Model>
+          <ID>ТОК-1</ID>
+          <Name>Станок токарный</Name>
+          <Model>JET-200</Model>
+        </Machine>
+        <Machine>
+          <ID>ТОК-2</ID>
+          <Name>Станок токарный</Name>
+          <Model>JET-200</Model>
         </Machine>
       </Machines>
     </Worker>
     <Worker>
-      <ID>2</ID>
-      <Name>Фомин Олег Иванович</Name>
+      <ID>002</ID>
+      <Name>Иванов Акакий Акакиевич</Name>
       <Speciality>Слесарь</Speciality>
-      <Grade>4</Grade>
+      <Grade>6</Grade>
       <Salary>200000</Salary>
       <CountMachine>0</CountMachine>
       <Machines>
         <Machine>
-          <ID>2</ID>
-          <Name>Станок токарный</Name>
-          <Model>JS-200</Model>
-        </Machine>
-        <Machine>
-          <ID>3</ID>
-          <Name>Станок токарный</Name>
-          <Model>16K-20</Model>
+          <ID>СЛЕ-001</ID>
+          <Name>Станок слесарный</Name>
+          <Model>JET-400</Model>
         </Machine>
       </Machines>
     </Worker>
