@@ -23,13 +23,15 @@ namespace Samost_4Form.NET
             InitializeComponent();
             debits = new List<Debit>();
             xmlFileUri = @"C:\Users\mripo\Source\Repos\ExPl0i\ReaderWriterXML_Alekseeva\XML\Samost_4.xml";
-
         }
 
-
+        /// <summary>
+        /// Выполняет привязку списка debits к элементу dataGridDebits
+        /// </summary>
         private void BindDebits()
         {
-            
+            // debitBindingSource.DataSource = debits;
+            //dataGridViewDebits.DataSource = debitBindingSource;
         }
     }
 

@@ -66,63 +66,6 @@ namespace Samost_4._1Lib
     }
 
     /// <summary>
-    /// Представляет объект для доступа к XML-данным
-    /// об экземплярах класса Debit
-    /// </summary>
-    public static class DebitDataProvider
-    {
-        // Объект для XML-сериализации и десериализации
-        static XmlSerializer xmlSzr = new XmlSerializer(typeof(Debit));
-
-        /// <summary>
-        /// Сохраняет объект класса Debit в XML-файл
-        /// </summary>
-        /// <param name="uri">URI XML-файла</param>
-        /// <param name="workshop">Объект класса Workshop</param>
-        public static void SaveObject(string uri, Debit debit)
-        {
-            // Объект с настройками для XmlWriter
-            XmlWriterSettings xmlWrS = new XmlWriterSettings();
-            xmlWrS.Indent = true; // Задаем отступ для XML-элементов
-            // Объект для записи XML-файлов
-            XmlWriter xmlWrt = XmlWriter.Create(uri, xmlWrS);
-            // Сериализуем объект debit в XML
-            xmlSzr.Serialize(xmlWrt, debit);
-            xmlWrt.Close(); // Закрываем поток данных для xmlWrt
-        }
-
-        /// <summary>
-        /// Загружает объект класса Debit из XML-файла
-        /// </summary>
-        /// <param name="uri"></param>
-        /// <returns>URI XML-файла</returns>
-        public static Debit LoadObject(string uri)
-        {
-            // Объект с настройками для XmlReader
-            XmlReaderSettings xmlRdS = new XmlReaderSettings();
-            // Объект для чтения XML-файлов
-            XmlReader xmlRdr = XmlReader.Create(uri, xmlRdS);
-            // Десериализуем объект типа Debit
-            Debit debit = xmlSzr.Deserialize(xmlRdr) as Debit;
-            // Закрываем поток данных для xmlRdr
-            xmlRdr.Close();
-            return debit;
-        }
-
-        /// <summary>
-        /// Возвращает код XML-файла в виде строки
-        /// </summary>
-        /// <param name="xmlFileName">Имя XML-файла</param>
-        /// <returns>Строка с кодом XML-файла</returns>
-        public static string GetXmlCode(string xmlFileName)
-        {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(xmlFileName);
-            return xmlDoc.InnerXml;
-        }
-    }
-
-    /// <summary>
     /// Представляет объект для доступа к XML-данным (обобщенный класс)
     /// </summary>
     /// <typeparam name="T"></typeparam>
@@ -137,7 +80,7 @@ namespace Samost_4._1Lib
         /// </summary>
         /// <param name="uri">URI XML-файл</param>
         /// <param name="obj">Объект</param>
-        public static void SaveObject(string uri, T obj)
+        public static void SaveObject(string uri, List<T> obj)
         {
             // Объект с настройками для XmlWriter
             XmlWriterSettings xmlWrS = new XmlWriterSettings();
@@ -154,14 +97,14 @@ namespace Samost_4._1Lib
         /// </summary>
         /// <param name="uri">URI XML-файла</param>
         /// <returns>Объект</returns>
-        public static T LoadObject(string uri)
+        public static List<T> LoadObject(string uri)
         {
             // Объект с настройками для XmlReader
             XmlReaderSettings xmlRdS = new XmlReaderSettings();
             // Объект для чтения XML-файлов
             XmlReader xmlRdr = XmlReader.Create(uri, xmlRdS);
             // Десериализуем обект
-            T obj = xmlSzr.Deserialize(xmlRdr) as T;
+            List<T> obj = xmlSzr.Deserialize(xmlRdr) as List<T>;
             // Закрываем поток данных для xmlRdr
             xmlRdr.Close();
             return obj;
