@@ -175,7 +175,7 @@ namespace Samost_4._2Lib
         /// </summary>
         /// <param name="uri">URI XML-файл</param>
         /// <param name="obj">Объект</param>
-        public static void SaveObject(string uri, T obj)
+        public static void SaveObject(string uri, List<T> obj)
         {
             // Объект с настройками для XmlWriter
             XmlWriterSettings xmlWrS = new XmlWriterSettings();
@@ -192,14 +192,14 @@ namespace Samost_4._2Lib
         /// </summary>
         /// <param name="uri">URI XML-файла</param>
         /// <returns>Объект</returns>
-        public static T LoadObject(string uri)
+        public static List<T> LoadObject(string uri)
         {
             // Объект с настройками для XmlReader
             XmlReaderSettings xmlRdS = new XmlReaderSettings();
             // Объект для чтения XML-файлов
             XmlReader xmlRdr = XmlReader.Create(uri, xmlRdS);
             // Десериализуем обект
-            T obj = xmlSzr.Deserialize(xmlRdr) as T;
+            List<T> obj = xmlSzr.Deserialize(xmlRdr) as List<T>;
             // Закрываем поток данных для xmlRdr
             xmlRdr.Close();
             return obj;
