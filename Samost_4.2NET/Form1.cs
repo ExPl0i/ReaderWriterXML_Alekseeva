@@ -140,7 +140,7 @@ namespace Samost_4._2NET
             nameCol.DataPropertyName = "Name";
             nameCol.HeaderText = "Название";
             nameCol.Width = 200;
-            dataGridWorkshops.Columns.Add(idCol);
+            dataGridWorkshops.Columns.Add(nameCol);
         }
 
         /// <summary>
@@ -154,31 +154,31 @@ namespace Samost_4._2NET
             idCol.DataPropertyName = "ID";
             idCol.HeaderText = "Номер";
             idCol.Width = 75;
-            dataGridWorkshops.Columns.Add(idCol);
+            dataGridMachines.Columns.Add(idCol);
 
             DataGridViewTextBoxColumn nameCol = new DataGridViewTextBoxColumn();
             nameCol.DataPropertyName = "Name";
             nameCol.HeaderText = "Наименование";
             nameCol.Width = 200;
-            dataGridWorkshops.Columns.Add(nameCol);
+            dataGridMachines.Columns.Add(nameCol);
 
             DataGridViewTextBoxColumn modelCol = new DataGridViewTextBoxColumn();
             modelCol.DataPropertyName = "Model";
             modelCol.HeaderText = "Модель";
             modelCol.Width = 150;
-            dataGridWorkshops.Columns.Add(modelCol);
+            dataGridMachines.Columns.Add(modelCol);
 
             DataGridViewTextBoxColumn createDateCol = new DataGridViewTextBoxColumn();
             createDateCol.DataPropertyName = "CreateDate";
             createDateCol.HeaderText = "Дата выпуска";
             createDateCol.Width = 85;
-            dataGridWorkshops.Columns.Add(createDateCol);
+            dataGridMachines.Columns.Add(createDateCol);
 
             DataGridViewTextBoxColumn wearCol = new DataGridViewTextBoxColumn();
             wearCol.DataPropertyName = "Wear";
             wearCol.HeaderText = "Износ";
             wearCol.Width = 75;
-            dataGridWorkshops.Columns.Add(wearCol);
+            dataGridMachines.Columns.Add(wearCol);
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Samost_4._2NET
         /// </summary>
         private void LoadData()
         {
-            workshops = XmlDataProvider<Workshop>.LoadObject(xmlUri);
+            workshops = XmlDataProvider<List<Workshop>>.LoadObject(xmlUri);
             toolStripStatusLabel1.Text = "Данные загружены из " + xmlUri;
         }
 
@@ -227,11 +227,14 @@ namespace Samost_4._2NET
         {
             ShowWorkshopData();
             BindMachines();
+            BindWorkshops();
         }
 
         private void dataGridMachines_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ShowMachineData();
+            BindMachines();
+            BindWorkshops();
+            ShowMachineData();  
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -256,7 +259,13 @@ namespace Samost_4._2NET
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            AddColsToDataGridWorkshops();
+            AddColsToDataGridMachines();
+        }
 
+        private void comboBoxWorkshops_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BindWorkshops();
         }
     }
 }

@@ -32,12 +32,12 @@
             this.dataGridDebits = new System.Windows.Forms.DataGridView();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
-            this.debitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameOwnerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.procentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.debitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDebits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.debitBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,7 @@
             this.sumDataGridViewTextBoxColumn,
             this.procentDataGridViewTextBoxColumn});
             this.dataGridDebits.DataSource = this.debitBindingSource;
+            this.dataGridDebits.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridDebits.Location = new System.Drawing.Point(12, 12);
             this.dataGridDebits.Name = "dataGridDebits";
             this.dataGridDebits.Size = new System.Drawing.Size(776, 353);
@@ -79,10 +80,6 @@
             this.buttonLoad.Text = "Загрузить из XML";
             this.buttonLoad.UseVisualStyleBackColor = true;
             this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
-            // 
-            // debitBindingSource
-            // 
-            this.debitBindingSource.DataSource = typeof(Samost_4._1Lib.Debit);
             // 
             // numberDataGridViewTextBoxColumn
             // 
@@ -113,6 +110,10 @@
             this.procentDataGridViewTextBoxColumn.DataPropertyName = "Procent";
             this.procentDataGridViewTextBoxColumn.HeaderText = "Procent";
             this.procentDataGridViewTextBoxColumn.Name = "procentDataGridViewTextBoxColumn";
+            // 
+            // debitBindingSource
+            // 
+            this.debitBindingSource.DataSource = typeof(Samost_4._1Lib.Debit);
             // 
             // Form1
             // 

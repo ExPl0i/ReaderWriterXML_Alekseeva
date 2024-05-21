@@ -31,10 +31,18 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.labelWorkshopData = new System.Windows.Forms.Label();
             this.dataGridWorkshops = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workshopBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.labelMachineData = new System.Windows.Forms.Label();
             this.comboBoxWorkshops = new System.Windows.Forms.ComboBox();
             this.dataGridMachines = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.machineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,26 +53,18 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.machinesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.labelWorkshopData = new System.Windows.Forms.Label();
-            this.labelMachineData = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workshopBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.machineBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridWorkshops)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workshopBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMachines)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.machinesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workshopBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -74,7 +74,7 @@
             this.tabControl1.Location = new System.Drawing.Point(2, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(666, 398);
+            this.tabControl1.Size = new System.Drawing.Size(963, 398);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -84,10 +84,19 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(658, 372);
+            this.tabPage1.Size = new System.Drawing.Size(955, 372);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Цеха";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // labelWorkshopData
+            // 
+            this.labelWorkshopData.AutoSize = true;
+            this.labelWorkshopData.Location = new System.Drawing.Point(6, 3);
+            this.labelWorkshopData.Name = "labelWorkshopData";
+            this.labelWorkshopData.Size = new System.Drawing.Size(35, 13);
+            this.labelWorkshopData.TabIndex = 1;
+            this.labelWorkshopData.Text = "label1";
             // 
             // dataGridWorkshops
             // 
@@ -97,11 +106,29 @@
             this.iDDataGridViewTextBoxColumn1,
             this.nameDataGridViewTextBoxColumn1});
             this.dataGridWorkshops.DataSource = this.workshopBindingSource;
+            this.dataGridWorkshops.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridWorkshops.Location = new System.Drawing.Point(0, 158);
             this.dataGridWorkshops.Name = "dataGridWorkshops";
-            this.dataGridWorkshops.Size = new System.Drawing.Size(658, 214);
+            this.dataGridWorkshops.Size = new System.Drawing.Size(949, 214);
             this.dataGridWorkshops.TabIndex = 0;
+            this.dataGridWorkshops.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridWorkshops_CellContentClick);
             this.dataGridWorkshops.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridWorkshops_CellContentClick);
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            // 
+            // workshopBindingSource
+            // 
+            this.workshopBindingSource.DataSource = typeof(Samost_4._2Lib.Workshop);
             // 
             // tabPage2
             // 
@@ -111,10 +138,19 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(658, 372);
+            this.tabPage2.Size = new System.Drawing.Size(955, 372);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Станки";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // labelMachineData
+            // 
+            this.labelMachineData.AutoSize = true;
+            this.labelMachineData.Location = new System.Drawing.Point(6, 3);
+            this.labelMachineData.Name = "labelMachineData";
+            this.labelMachineData.Size = new System.Drawing.Size(35, 13);
+            this.labelMachineData.TabIndex = 2;
+            this.labelMachineData.Text = "label1";
             // 
             // comboBoxWorkshops
             // 
@@ -123,6 +159,7 @@
             this.comboBoxWorkshops.Name = "comboBoxWorkshops";
             this.comboBoxWorkshops.Size = new System.Drawing.Size(120, 21);
             this.comboBoxWorkshops.TabIndex = 1;
+            this.comboBoxWorkshops.SelectedIndexChanged += new System.EventHandler(this.comboBoxWorkshops_SelectedIndexChanged);
             // 
             // dataGridMachines
             // 
@@ -132,11 +169,29 @@
             this.iDDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridMachines.DataSource = this.machineBindingSource;
+            this.dataGridMachines.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridMachines.Location = new System.Drawing.Point(0, 161);
             this.dataGridMachines.Name = "dataGridMachines";
-            this.dataGridMachines.Size = new System.Drawing.Size(658, 211);
+            this.dataGridMachines.Size = new System.Drawing.Size(947, 211);
             this.dataGridMachines.TabIndex = 0;
+            this.dataGridMachines.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMachines_CellContentClick);
             this.dataGridMachines.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMachines_CellContentClick);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // machineBindingSource
+            // 
+            this.machineBindingSource.DataSource = typeof(Samost_4._2Lib.Machine);
             // 
             // menuStrip1
             // 
@@ -144,7 +199,7 @@
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(670, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(965, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -193,7 +248,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(670, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(965, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -208,65 +263,15 @@
             this.machinesBindingSource.DataMember = "Machines";
             this.machinesBindingSource.DataSource = this.workshopBindingSource;
             // 
-            // labelWorkshopData
-            // 
-            this.labelWorkshopData.AutoSize = true;
-            this.labelWorkshopData.Location = new System.Drawing.Point(6, 3);
-            this.labelWorkshopData.Name = "labelWorkshopData";
-            this.labelWorkshopData.Size = new System.Drawing.Size(35, 13);
-            this.labelWorkshopData.TabIndex = 1;
-            this.labelWorkshopData.Text = "label1";
-            // 
-            // labelMachineData
-            // 
-            this.labelMachineData.AutoSize = true;
-            this.labelMachineData.Location = new System.Drawing.Point(6, 3);
-            this.labelMachineData.Name = "labelMachineData";
-            this.labelMachineData.Size = new System.Drawing.Size(35, 13);
-            this.labelMachineData.TabIndex = 2;
-            this.labelMachineData.Text = "label1";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            // 
-            // workshopBindingSource
-            // 
-            this.workshopBindingSource.DataSource = typeof(Samost_4._2Lib.Workshop);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // machineBindingSource
-            // 
-            this.machineBindingSource.DataSource = typeof(Samost_4._2Lib.Machine);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 450);
+            this.ClientSize = new System.Drawing.Size(965, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
@@ -278,16 +283,16 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridWorkshops)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workshopBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMachines)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.machinesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workshopBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.machineBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

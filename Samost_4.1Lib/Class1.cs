@@ -15,7 +15,7 @@ namespace Samost_4._1Lib
         /// <summary>
         /// Номер счета
         /// </summary>
-        [XmlAnyAttribute]
+        [XmlAttribute]
         public string Number { get; set; }
 
         /// <summary>

@@ -1,5 +1,8 @@
 ﻿namespace Laba_6
 {
+    /// <summary>
+    /// Представляет банковский вклад
+    /// </summary>
     public class Debit
     {
         /// <summary>
@@ -114,12 +117,12 @@
             Console.WriteLine();
             GameExample(debit);
         }
+
         /// <summary>
         /// Метод позволяет взаимодействовать с экземпляром класса Debit
         /// </summary>
         /// <param name="account">Экземпляр класса Debit</param>
         /// <exception cref="amount">Сумма должна иметь тип double</exception>
-
         public static void GameExample(Debit debit)
         {
             try

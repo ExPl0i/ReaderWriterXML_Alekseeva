@@ -137,7 +137,7 @@ namespace Samost_4._2Lib
         /// <param name="grade">Разряд</param>
         /// <param name="salary">Зарплата</param>
         /// <param name="countMachine">Количество станков</param>
-        public void AddNewWorker(string id, string name, string model, string createDate, int wear)
+        public void AddNewMachine(string id, string name, string model, string createDate, int wear)
         {
             Machine newMachine = new Machine()
             {
@@ -192,14 +192,14 @@ namespace Samost_4._2Lib
         /// </summary>
         /// <param name="uri">URI XML-файла</param>
         /// <returns>Объект</returns>
-        public static List<T> LoadObject(string uri)
+        public static T LoadObject(string uri)
         {
             // Объект с настройками для XmlReader
             XmlReaderSettings xmlRdS = new XmlReaderSettings();
             // Объект для чтения XML-файлов
             XmlReader xmlRdr = XmlReader.Create(uri, xmlRdS);
             // Десериализуем обект
-            List<T> obj = xmlSzr.Deserialize(xmlRdr) as List<T>;
+            T obj = xmlSzr.Deserialize(xmlRdr) as T;
             // Закрываем поток данных для xmlRdr
             xmlRdr.Close();
             return obj;

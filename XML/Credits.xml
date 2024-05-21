@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<данные_о_кредитах xmlns="http://www.credit.darom/credits"
-				   xmlns:t="http://www.credit.darom/credits">
+<данные_о_кредитах xmlns="http://www.credit.darom/credits">
 	<кредит id="1">
 		<получатель>
 			<фио>Иванов Иван Иванович</фио>
